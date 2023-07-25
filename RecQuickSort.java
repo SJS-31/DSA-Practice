@@ -5,13 +5,13 @@ public class RecQuickSort {
         if(s>=e)
             return;
 
-        int p = partion(arr, s,e);
+        int p = partiton(arr, s,e);
 
         quickSort(arr, s, p-1);
         quickSort(arr, p+1, e);
     }
 
-    public static int partion(int []arr,int s, int e) {
+    public static int partiton(int []arr,int s, int e) {
         int count =0;
         for (int i=s+1; i<=e;i++)
         {
@@ -28,6 +28,13 @@ public class RecQuickSort {
 
         while(s< p && e>p)
         {
+            
+            while(arr[s]<arr[p])
+            s++;
+
+            while(arr[e]>arr[p])
+            e--;
+
             if(arr[s]>arr[p] && arr[e]<arr[p])
             {
                 temp=arr[e];
@@ -36,11 +43,6 @@ public class RecQuickSort {
                 s++;
                 e--;
             }
-            if(arr[s]<arr[p])
-            s++;
-
-            if(arr[e]>arr[p])
-            e--;
 
         }
         return p;
