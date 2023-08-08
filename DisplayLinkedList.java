@@ -41,6 +41,8 @@ class LinkedList {
         }
         System.out.println("null");
     }
+    
+
 }
 
 public class DisplayLinkedList {
@@ -52,6 +54,7 @@ public class DisplayLinkedList {
         linkedList.add(40);
 
         linkedList.display();
+
     }
 }
 
