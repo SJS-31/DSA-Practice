@@ -23,7 +23,7 @@ public class HashMapImp {
         private void initBuckets(int N){ // N - capacity/size of bucket array
             buckets = new LinkedList[N];
             for (int i = 0; i < buckets.length; i++) { 
-                buckets[i] = new LinkedList<>(); 
+                buckets[i] = new LinkedList<>(); //Initializedd emplty ll at every bucket index
             }
         }
 
@@ -41,6 +41,7 @@ public class HashMapImp {
             }
             return -1;
         }
+        
         public MyHashMap(){ //Constructor
             initBuckets(DEFAULT_CAPACITY);
         }
@@ -64,6 +65,7 @@ public class HashMapImp {
             int bi=HashFunc(key);
             LinkedList<Node> curBucket = buckets[bi];
             int ei = searchInbucket(curBucket, key);
+            
             if(ei == -1){ //key does not exists, we can insert new node
                 Node node = new Node(key, value);
                 curBucket.add(node);
